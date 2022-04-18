@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ChakraProvider } from '@chakra-ui/react';
-import rstheme from './styles/rstheme.js';
 import App from './App';
+import { ThemeProvider } from '@mui/material';
+import rsTheme from './styles/rsTheme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider resetCSS theme={rstheme}>
+    <ThemeProvider theme={rsTheme}>
       <App />
-    </ChakraProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

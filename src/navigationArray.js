@@ -1,4 +1,4 @@
-export const navArrays = [
+export const navigationArray = [
   {
     key: 'My Resumes',
     value: 'my-resumes',

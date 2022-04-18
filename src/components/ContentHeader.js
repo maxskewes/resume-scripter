@@ -1,4 +1,4 @@
-import { Box, Text, Progress, HStack, Button } from '@chakra-ui/react';
+import { Box, Typography, Button } from '@mui/material';
 import { RiArrowLeftLine } from 'react-icons/ri';
 
 const ContentHeader = (props) => {
@@ -7,13 +7,11 @@ const ContentHeader = (props) => {
   const ProgressBar = ({ completed }) => {
     return (
       <>
-        <Progress value={completed} w={160} h={2} colorScheme='orangeScheme' />
-        <Text variant='g14'>STEP 1 OF 3</Text>
+        {/* <Progress value={completed} w={160} h={2} /> */}
+        <Typography variant='g14'>STEP 1 OF 3</Typography>
       </>
     );
   };
-
-
 
   return (
     <Box
@@ -33,17 +31,19 @@ const ContentHeader = (props) => {
         Back to {breadcrumb}
       </Button>
 
-      <HStack p={6} borderLeft='1px' borderColor='GRAY' w='50%'>
-        <Text variant='t14' textTransform='uppercase'>
+      <Box p={6} borderLeft='1px' borderColor='GRAY' w='50%'>
+        <Typography variant='t14' textTransform='uppercase'>
           RESUME: {clientName}-{year}
-        </Text>
-        <Text variant='g14' textTransform='uppercase'>
+        </Typography>
+        <Typography variant='g14' textTransform='uppercase'>
           \ {currentPage}
-        </Text>
-      </HStack>
-      <HStack p={5}>
-        {percentCompleted !== null ? <ProgressBar completed={percentCompleted} /> : null }
-      </HStack>
+        </Typography>
+      </Box>
+      <Box p={5}>
+        {percentCompleted !== null ? (
+          <ProgressBar completed={percentCompleted} />
+        ) : null}
+      </Box>
     </Box>
   );
 };

@@ -1,14 +1,23 @@
-import { extendTheme, theme as base } from '@chakra-ui/react';
+import { createTheme } from '@mui/material';
 import { ButtonStyle as Button } from './components/ButtonStyle';
 import { HeadingStyle as Heading } from './components/HeadingStyle';
 import { TextStyle as Text } from './components/TextStyle';
 import { CheckboxStyle as RSCheckboxes } from './components/CheckboxStyle';
 
-const rstheme = extendTheme({
+const rsTheme = createTheme({
   // Fonts
+  typography: {
+    fontFamily: [
+      'Work Sans',
+      'Roboto',
+      '-apple-system',
+      'sans-serif',
+      '-apple-system'
+    ].join(','),
+  },
   fonts: {
-    body: `Work Sans, ${base.fonts.heading}`,
-    heading: `Work Sans, ${base.fonts.heading}`,
+    body: `Work Sans`,
+    heading: `Work Sans`,
     text: 'Work Sans',
     link: 'Work Sans',
   },
@@ -36,4 +45,4 @@ const rstheme = extendTheme({
   },
 });
 
-export default rstheme;
+export default rsTheme;

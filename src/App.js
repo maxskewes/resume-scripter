@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import { Formik, Field, Form } from 'formik';
+import SiteFooter from './components/SiteFooter';
+import SiteHeader from './components/SiteHeader';
 import Landing from './routes/Landing';
 import LogIn from './routes/LogIn';
 import MyResumes from './routes/MyResumes';
@@ -13,11 +14,12 @@ import AreasExpertise from './routes/AreasExpertise';
 import EducationTraining from './routes/EducationTraining';
 import VolunteerExperience from './routes/VolunteerExperience';
 import CareerSummary from './routes/CareerSummary';
+import { initialValues } from './formik/initialValues';
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <SiteHeader />
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path='log-in' element={<LogIn />} />
@@ -32,7 +34,7 @@ function App() {
         <Route path='education-training' element={<EducationTraining />} />
         <Route path='volunteer-experience' element={<VolunteerExperience />} />
       </Routes>
-      <Footer />
+      <SiteFooter />
     </BrowserRouter>
   );
 }
